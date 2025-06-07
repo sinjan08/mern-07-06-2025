@@ -1,0 +1,229 @@
+{
+	"info": {
+		"_postman_id": "b0990a20-3849-4c3f-942b-7a773345dce9",
+		"name": "MERN-07-06-2025",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24503405"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Admin",
+					"item": [
+						{
+							"name": "login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/admin/login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"admin",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "user login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"devsinjan@yopmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "sign up",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Sinjan Chakraborty",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "devsinjan@yopmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456",
+											"type": "text"
+										},
+										{
+											"key": "profileImage",
+											"type": "file",
+											"src": "/E:/Imgaes/1-intro-photo-final.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/sign-up",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sign-up"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "verify otp",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"devsinjan@yopmail.com\",\r\n    \"otp\": \"121436\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/verify",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"verify"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "profile",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/profile",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "profile image update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "profileImage",
+											"type": "file",
+											"src": "/E:/Imgaes/1-intro-photo-final.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile-image/update",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile-image",
+										"update"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:5500/api",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NDNkYmY4ZDUzOTViYzhmMDliNzdmMCIsImVtYWlsIjoiZGV2c2luamFuQHlvcG1haWwuY29tIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3NDkyNzc3MjcsImV4cCI6MTc0OTMyMDkyN30.R99Lcitmsb3sn4JXIwKXAzPG7Yz8JHO1vN3iI7ikim4",
+			"type": "string"
+		}
+	]
+}
